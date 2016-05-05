@@ -12,3 +12,6 @@ body {
 .container {
 	width: 100%;
 }
+.ol-viewport {
+	border-style: inset;
+}
