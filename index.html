@@ -4,8 +4,8 @@
 <title>OnMyWay</title>
 <link rel="stylesheet" href="http://openlayers.org/en/v3.15.1/css/ol.css" type="text/css">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<link rel="stylesheet" href="map.css">
 <link rel="stylesheet" href="http://getbootstrap.com/examples/carousel/carousel.css">
+<link rel="stylesheet" href="map.css">
 <script src="http://openlayers.org/en/v3.15.1/build/ol.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 </head>
@@ -42,7 +42,13 @@
 						</ul>
 						</li>
 					</ul>
+					<div class="row">
+					<div class="col-md-6">
+					</div>
+				          <div class="col-md-3">
+
 					<input id="plzzz" type="text" class="form-control" placeholder="Search person/place..." onkeypress="return tableInputKeyPress(event)">
+			</div> </div>
 					<script>
 function tableInputKeyPress(e){
 	e=e||window.event;
@@ -52,9 +58,15 @@ function tableInputKeyPress(e){
 		var zoomTo = vectorSource.getFeatureById(document.getElementById('plzzz').value);
 		var point = zoomTo.getGeometry();
 		var size = map.getSize();
-		mapView.fit(point, size, {padding: [200, 10, 200, 10], nearest: true});
+		mapView.fit(point, size, {padding: [100, 10, 100, 10], nearest: true});
+		var info = document.getElementById('info');
+		info.innerHTML = zoomTo.getId() + ': ' + zoomTo.get('name');
+		featureOverlay.getSource().addFeature(zoomTo);
+		highlight = zoomTo;
 	}
-}              
+
+}
+
 
 					</script>
 				</div>
@@ -65,7 +77,7 @@ function tableInputKeyPress(e){
 </div>
 
 
-<div id="map" class="map" height="400"></div>
+<div id="map" class="map" height="800"></div>
 
 <script>
 
@@ -181,7 +193,7 @@ code: 'xkcd-image',
 units: 'pixels',
 extent: extent
 });
-var mapView = new ol.View({projection: projection, center: ol.extent.getCenter(extent), zoom: 2, minZoom: 2, maxZoom: 6, extent: [400, 100, 600, 200]}); 
+var mapView = new ol.View({projection: projection, center: ol.extent.getCenter(extent), zoom: 2, minZoom: 2, maxZoom: 5, extent: [70, 20, 930, 280]}); 
 map.setView(mapView);
 var imageLayer = new ol.layer.Image({
 source: new ol.source.ImageStatic({
@@ -259,10 +271,8 @@ map.on('click', function(evt) {
 			<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
 		</div><!-- /.col-lg-4 -->
 		<div class="col-lg-4">
-			<img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-			<h2>Auditoriums</h2>
-			<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-			<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+			<a href="https://github.com/stockhausenj/OnMyWay"><img src="images/Octocat.jpg" width="300" height="300"></a>
+			<h2>OnMyWay GitHub Project</h2>
 		</div><!-- /.col-lg-4 -->
 		<div class="col-lg-4">
 			<img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
