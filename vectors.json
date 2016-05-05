@@ -1,0 +1,282 @@
+{
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        0, 
+                        0
+                    ], 
+                    [
+                        0, 
+                        300
+                    ]
+                ], 
+                "type": "LineString"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        0, 
+                        0
+                    ], 
+                    [
+                        1000, 
+                        0
+                    ]
+                ], 
+                "type": "LineString"
+            }, 
+            "id": "line", 
+            "properties": {
+                "name": "dividenconquer"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            231, 
+                            100
+                        ], 
+                        [
+                            231, 
+                            101
+                        ], 
+                        [
+                            232, 
+                            101
+                        ], 
+                        [
+                            232, 
+                            100
+                        ]
+                    ]
+                ], 
+                "type": "Polygon"
+            }, 
+            "id": "cube0001", 
+            "properties": {
+                "name": "Julia"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            231, 
+                            105
+                        ], 
+                        [
+                            231, 
+                            106
+                        ], 
+                        [
+                            232, 
+                            106
+                        ], 
+                        [
+                            232, 
+                            105
+                        ]
+                    ]
+                ], 
+                "type": "Polygon"
+            }, 
+            "id": "cube0002", 
+            "properties": {
+                "name": "Lynn"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            236, 
+                            100
+                        ], 
+                        [
+                            236, 
+                            101
+                        ], 
+                        [
+                            237, 
+                            101
+                        ], 
+                        [
+                            237, 
+                            100
+                        ]
+                    ]
+                ], 
+                "type": "Polygon"
+            }, 
+            "id": "cube0003", 
+            "properties": {
+                "name": "Jay"
+            }, 
+            "type": "Feature"
+        }, 
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            236, 
+                            105
+                        ], 
+                        [
+                            236, 
+                            106
+                        ], 
+                        [
+                            237, 
+                            106
+                        ], 
+                        [
+                            237, 
+                            105
+                        ]
+                    ]
+                ], 
+                "type": "Polygon"
+            }, 
+            "id": "cube0004", 
+            "properties": {
+                "name": "Brett"
+            }, 
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            231,
+                            112
+                        ],
+                        [
+                            231,
+                            113
+                        ],
+                        [
+                            232,
+                            113
+                        ],
+                        [
+                            232,
+                            112
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "id": "cube0005",
+            "properties": {
+                "name": "Brett"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            231,
+                            118
+                        ],
+                        [
+                            231,
+                            119
+                        ],
+                        [
+                            232,
+                            119
+                        ],
+                        [
+                            232,
+                            118
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "id": "cube0006",
+            "properties": {
+                "name": "Brett"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            236,
+                            112
+                        ],
+                        [
+                            236,
+                            113
+                        ],
+                        [
+                            237,
+                            113
+                        ],
+                        [
+                            237,
+                            112
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "id": "cube0007",
+            "properties": {
+                "name": "Brett"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            236,
+                            118
+                        ],
+                        [
+                            236,
+                            119
+                        ],
+                        [
+                            237,
+                            119
+                        ],
+                        [
+                            237,
+                            118
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "id": "cube0008",
+            "properties": {
+                "name": "Brett"
+            },
+            "type": "Feature"
+        }
+
+    ], 
+    "type": "FeatureCollection"
+}
