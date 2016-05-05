@@ -66,7 +66,9 @@ function tableInputKeyPress(e){
 
 
 <div id="map" class="map" height="400"></div>
+
 <script>
+
 var image = new ol.style.Circle({
 radius: 5,
 fill: null,
@@ -76,7 +78,7 @@ stroke: new ol.style.Stroke({color: 'red', width: 1})
 var styles = {
 	'LineString': new ol.style.Style({
 stroke: new ol.style.Stroke({
-color: 'green',
+color: 'white',
 width: 1
 })
 }),
@@ -140,34 +142,36 @@ var styleFunction = function(feature) {
 };
 
 var geojsonObject = (function() {
-        var json = null;
-        $.ajax({
-            'async': false,
-            'global': false,
-            'url': "vectors.json",
-            'dataType': "json",
-            'success': function (data) {
-                json = data;
-            }
-        });
-        return json;
-    })();
+		var json = null;
+		$.ajax({
+				'async': false,
+				'global': false,
+				'url': "vectors.json",
+				'dataType': "json",
+				'success': function (data) {
+				json = data;
+				}
+				});
+		return json;
+		})();
 
 var vectorSource = new ol.source.Vector({
 features: (new ol.format.GeoJSON()).readFeatures(geojsonObject)
 });
-
-//  vectorSource.addFeature(new ol.Feature(new ol.geom.Circle([5e6, 7e6], 1e6)));
-
 var vectorLayer = new ol.layer.Vector({
 source: vectorSource,
 style: styleFunction
 });
-
 var map = new ol.Map({
 layers: [],
-target: 'map'
+target: 'map',
+interactions: ol.interaction.defaults({dragPan: false}).extend([
+		new ol.interaction.DragPan({kinetic: false})
+]),
 });
+
+
+
 
 map.addLayer(vectorLayer);
 var vectorSource = vectorLayer.getSource();
@@ -177,7 +181,7 @@ code: 'xkcd-image',
 units: 'pixels',
 extent: extent
 });
-var mapView = new ol.View({projection: projection, center: ol.extent.getCenter(extent), zoom: 2}); 
+var mapView = new ol.View({projection: projection, center: ol.extent.getCenter(extent), zoom: 2, minZoom: 2, maxZoom: 6, extent: [400, 100, 600, 200]}); 
 map.setView(mapView);
 var imageLayer = new ol.layer.Image({
 source: new ol.source.ImageStatic({
@@ -189,7 +193,6 @@ imageExtent: extent
 map.removeLayer(vectorLayer);
 map.addLayer(imageLayer);
 map.getLayers().push(vectorLayer);
-
 var featureOverlay = new ol.layer.Vector({
 source: new ol.source.Vector(),
 map: map,
